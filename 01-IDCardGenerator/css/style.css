@@ -90,11 +90,15 @@
   font-size: 1.2rem;
 }
 
+.location {
+  font-size: 1.2rem;
+}
+
 .college-name {
   font-size: 1.2rem;
 }
 .cardLocation{
-    font-size : 1.2rem;
+  font-size : 1.2rem;
 }
 
 .card-element.college-name {
