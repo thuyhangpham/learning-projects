@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# ⏰ React useEffect Digital Clock App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A real-time digital clock application built to practice useState, useEffect, setInterval in React.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Key Features
+* **Real-Time Synchronous Render:** Updates the UI every 1000ms (1 second) using native browser time engines.
+* **Memory-Safe Cleanups:** Automatically clears active background processes to avoid memory leaks or performance degradation.
+* **Defensive Scaffolding:** Uses execution constraints to prevent state-driven infinite rendering loops.
 
-### `npm start`
+## Technical Breakdown (How it works)
+1. **`useState(new Date())`**: Captures and initializes the local time object during the mounting phase.
+2. **`useEffect()`**: Registers an isolated side-effect block to run asynchronously outside the standard UI workflow.
+3. **`setInterval()`**: Spawns a background browser timer that executes state mutation functions sequentially.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech Stack & Core Concepts Mastered
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### **Core Stack**
+* **Framework:** React.js.
+* **State Management:** `useState` hook for mutable date objects.
+* **Side-Effect Management:** `useEffect` hook.
 
-### `npm test`
+### **JavaScript & React Rules Mastered**
+* **The Dependency Array (`[]`):** Passed an empty array `[]` as the second argument to ensure the effect triggers **exactly once** when the component mounts, blocking infinite re-render loops.
+* **Cleanup Function (`return () => clearInterval()`):** Returned a teardown callback inside `useEffect` to destroy the active interval when the component unmounts, preventing catastrophic RAM leaks.
+* **Data Formatting:** Applied `.toLocaleTimeString()` to parse complex Date Objects into human-readable string outputs inside JSX elements.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Execution
+* **Run Command:** `npm start`
